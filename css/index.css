@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color:  #121b24;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+header{
+    position: fixed;
+    display: block;
+    height: 100%;
+    width: 20%;
+}
+
+header img{
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+nav a {
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    line-height: 40px;
+    text-decoration: none;
+    gap: 20px;
+}
+
+.menu a:hover, .menu .peliculas {
+    color: #4384a7;
+}
+
+.menu p{
+    color: #ffffff;
+    font-size: 15px;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px;
+}
+
+
+
+/* pelis */
+#img2{
+    height: 250px;
+    width: 190px;
+}
+
+#divGeneral{
+    height: 100%;
+    width: 190px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#description{
+    display: none;
+}
+
+main{
+    grid-column: 2/3;
+}
+
+button{
+    border: none;
+}
+
+#h4{
+    color: #ffffff;
+    font-size: 15px;
+}
+#h4pelis{
+    color: #ffffff;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.search i {
+    font-size: 20px;
+    color: #eee;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background: #121b24;
+    width: 300px;
+    height: 2.4rem;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+input{
+    border: none;
+    padding: 10px;
+    color: #fff;
+    font-size: 17px;
+}
