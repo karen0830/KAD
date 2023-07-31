@@ -12,7 +12,6 @@ const crear = () => {
 
     const img = document.createElement('img');
     img.id = 'img2';
-    // 'https://image.tmdb.org/t/p/original' + backdropPath;
 
     const h1 = document.createElement('h4');
     h1.id = 'h4';
@@ -20,8 +19,18 @@ const crear = () => {
     const descripcion = document.createElement('p');
     descripcion.id = 'description';
 
+    const leermas = document.createElement('button')
+    leermas.id = 'leermas';
+    leermas.textContent = 'Leer más';
+
+    const div2 = document.createElement('div')
+    div2.id = 'div2'
+
+    div2.appendChild(descripcion);
+    div2.appendChild(leermas)
+
     div.appendChild(h1);
-    div.appendChild(descripcion);
+    div.appendChild(div2);
 
     divGeneral.appendChild(img)
     divGeneral.appendChild(div);

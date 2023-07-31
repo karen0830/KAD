@@ -52,28 +52,34 @@ section{
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
-    gap: 10px;
+    gap: 20px;
 }
 
 
 
 /* pelis */
 #img2{
-    height: 250px;
-    width: 190px;
+    height: 300px;
+    width: 300px;
 }
 
 #divGeneral{
     height: 100%;
-    width: 190px;
+    width: 300px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
 #description{
-    display: none;
+    display: block;
+    color: #ffffff;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
 }
 
 main{
@@ -85,8 +91,9 @@ button{
 }
 
 #h4{
-    color: #ffffff;
+    color: #4384a7;;
     font-size: 15px;
+    text-align: start;
 }
 #h4pelis{
     color: #ffffff;
@@ -117,4 +124,17 @@ input{
     padding: 10px;
     color: #fff;
     font-size: 17px;
+}
+
+#leermas button:hover {
+    color: #ffffff;
+}
+
+
+#leermas{
+    color: #4384a7;
+}
+
+#div2{
+    display: flex;
 }
