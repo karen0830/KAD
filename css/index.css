@@ -21,34 +21,36 @@ header img{
 }
 
 nav{
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     padding-left: 20px;
 }
 
-nav a {
+nav button{
     width: 100%;
     font-size: 20px;
     color: #fff;
     display: flex;
     align-items: center;
     line-height: 40px;
-    text-decoration: none;
     gap: 20px;
 }
 
-.menu a:hover, .menu .peliculas {
+nav .Navegar0{
     color: #4384a7;
 }
+
+/* .menu button:hover, .menu .peliculas {
+    color: #4384a7;
+} */
 
 .menu p{
     color: #ffffff;
     font-size: 15px;
 }
 
-section{
+#peliculas{
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -80,6 +82,7 @@ section{
     overflow: hidden;
     text-overflow: ellipsis;
     width: 200px;
+    text-align: start;
 }
 
 main{
@@ -136,5 +139,31 @@ input{
 }
 
 #div2{
+    width: 300px;
     display: flex;
+    gap: 5px;
+}
+
+/* series */
+#h4series{
+    color: #ffffff;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+#series{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+#leermas2 button:hover {
+    color: #ffffff;
+}
+
+
+#leermas2{
+    color: #4384a7;
 }

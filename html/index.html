@@ -13,36 +13,56 @@
     <header>
         <nav class="menu">
             <img src="/images/Captura_de_pantalla_2023-07-30_090042-removebg-preview.png" alt="logo">
-            <a href="" class="navegar">
-                <span class="icon">
-                    <i class="ri-map-2-fill"></i>
-                </span>
-                Navegar
-            </a>
-            <a href="/html/index.html" class="peliculas">
-                <span class="icon">
-                    <i class="ri-movie-fill"></i>
-                </span>
-                Peliculas
-            </a>
-            <a href="">
-                <span class="icon">
-                    <i class="ri-film-line"></i>
-                </span>
-                Series
-            </a>
+                <button  class="Navegar0">
+                    <span class="icon">
+                        <i class="ri-map-2-fill"></i>
+                    </span>
+                    Navegar
+                </button>
+                <button  class="Navegar1">
+                    <span class="icon">
+                        <i class="ri-movie-fill"></i>
+                    </span>
+                    Peliculas
+                </button>
+                <button class="Navegar2">
+                    <span class="icon">
+                        <i class="ri-film-line"></i>
+                    </span>
+                    Series
+                </button>
         </nav>
     </header>
     <main>
-        <div class="search">
-            <i class="ri-search-line"></i>
-            <input type="search" id="searchInput" placeholder="Ingrese su búsqueda...">
+        <div id="general">
+
+            <section class="search">
+                <i class="ri-search-line"></i>
+                <input type="search" id="searchInput" placeholder="Ingrese su búsqueda...">
+            </section>
+    
+            <section id="sectionPelis">
+                <h3 id="h4pelis">Peliculas</h3>
+            </section>
+    
+            <section id="peliculas">
+            </section>
+    
+            <section id="sectionSeries">
+                <h3 id="h4series">Series</h3>
+            </section>
+    
+            <section id="series">
+            </section>
+
         </div>
-        <h4 id="h4pelis">Peliculas</h4>
-        <section id="peliculas">
-        </section>
+
+        <div id="resultados"></div>
     </main>
     <script src="/js/index.js"></script>
+    <script src="/js/series.js"></script>
+    <script src="/js/navegacion.js"></script>
+    <script src="/js/busquedas.js"></script>
 </body>
 
 </html>
