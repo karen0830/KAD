@@ -1,36 +1,26 @@
-const searchInput = document.getElementById('searchInput');
-const tituloList = document.getElementById('general');
-const resultadosDiv = document.getElementById('resultados');
+// Función para mostrar solo los elementos que coincidan con el término de búsqueda
+const filtrarPeliculas = (term) => {
+    const section = document.getElementById('general');
+    const peliculas = section.getElementsByTagName('button');
+    for (const pelicula of peliculas) {
 
-searchInput.addEventListener('input', () => {
-    const searchTerm = searchInput.value.toLowerCase();
-    const items = Array.from(tituloList.querySelectorAll('#button'));
-
-    const resultados = items.filter(item => {
-        const titulo = item.querySelector('h4').textContent.toLowerCase();
-        return titulo.includes(searchTerm);
-    });
-
-    mostrarResultados(resultados);
-
-    mostrarResultados(resultados);
-    h4SeriesM.style.display = "none"
-    seriesC.style.display = "none"
-    h4peliculas.style.display = "none"
-    films.style.display = "none"
-});
-
-function mostrarResultados(resultados) {
-    resultadosDiv.innerHTML = '';
-
-    if (resultados.length === 0) {
-        resultadosDiv.textContent = 'No se encontraron resultados.';
-        return;
+        if (pelicula.querySelector('h4')) {
+            const titulo = pelicula.querySelector('h4').textContent.toLowerCase();
+            if (titulo.includes(term.toLowerCase())) {
+                pelicula.style.display = 'block';
+            } else {
+                pelicula.style.display = 'none';
+            }
+        }
     }
+};
 
-    resultados.forEach(result => {
-        const copiaItem = result.cloneNode(true); // Clonar el elemento .item completo
-        resultadosDiv.appendChild(copiaItem); // Agregar la copia al contenedor de resultados
-        leerMasyMenos2();
+
+// Agregar el evento de escucha al campo de búsqueda
+export function buscarElemento() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (event) => {
+        const term = event.target.value;
+        filtrarPeliculas(term);
     });
 }

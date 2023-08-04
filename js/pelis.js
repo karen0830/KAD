@@ -1,3 +1,5 @@
+import { buscarElemento } from "../js/busquedas.js";
+
 // JavaScript
 const section = document.getElementById('peliculas');
 const crear = () => {
@@ -57,6 +59,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_v
             matriz.push(array)
         });
         leerMasyMenos()
+        buscarElemento();
     })
     .catch(err => console.error(err));
 

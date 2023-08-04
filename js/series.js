@@ -1,3 +1,5 @@
+import { buscarElemento } from "../js/busquedas.js";
+
 const series = document.getElementById('series');
 
 const baseURL = 'https://image.tmdb.org/t/p/w500'; // Base URL de las imágenes de la API
@@ -43,7 +45,7 @@ const crearSeries = (serieData) => {
     button.appendChild(divGeneral);
 
     series.appendChild(button);
-    let array = [div, divGeneral, img, h1, descripcion, section, leermas, div2];
+    let array = [div, divGeneral, img, h1, descripcion, series, leermas, div2];
     return array
 };
 
@@ -66,6 +68,7 @@ fetch('https://api.themoviedb.org/3/trending/tv/day?language=en-US', requireOpti
             matriz2.push(crearS)
         }
         leerMasyMenos2()
+        buscarElemento();
     })
     .catch(err => console.error(err));
 
