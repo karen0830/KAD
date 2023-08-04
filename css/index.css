@@ -167,3 +167,11 @@ input{
 #leermas2{
     color: #4384a7;
 }
+
+/* busqueda */
+#resultados{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
