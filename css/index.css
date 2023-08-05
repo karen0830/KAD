@@ -1,33 +1,33 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    background-color:  #121b24;
+    background-color: #121b24;
 }
 
-body{
+body {
     display: grid;
     grid-template-columns: 20% 80%;
 }
 
-header{
+header {
     position: fixed;
     display: block;
     height: 100%;
     width: 20%;
 }
 
-header img{
+header img {
     width: 100%;
 }
 
-nav{
+nav {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     padding-left: 20px;
 }
 
-nav button{
+nav button {
     width: 100%;
     font-size: 20px;
     color: #fff;
@@ -37,7 +37,7 @@ nav button{
     gap: 20px;
 }
 
-nav .Navegar0{
+nav .Navegar0 {
     color: #4384a7;
 }
 
@@ -45,12 +45,12 @@ nav .Navegar0{
     color: #4384a7;
 } */
 
-.menu p{
+.menu p {
     color: #ffffff;
     font-size: 15px;
 }
 
-#peliculas{
+#peliculas {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -60,12 +60,12 @@ nav .Navegar0{
 
 
 /* pelis */
-#img2{
+#img2 {
     height: 300px;
     width: 300px;
 }
 
-#divGeneral{
+#divGeneral {
     height: 100%;
     width: 300px;
     margin-bottom: 10px;
@@ -74,7 +74,7 @@ nav .Navegar0{
     gap: 10px;
 }
 
-#description{
+#description {
     display: block;
     color: #ffffff;
     font-size: 15px;
@@ -85,20 +85,22 @@ nav .Navegar0{
     text-align: start;
 }
 
-main{
+main {
     grid-column: 2/3;
 }
 
-button{
+button {
     border: none;
 }
 
-#h4{
-    color: #4384a7;;
+#h4 {
+    color: #4384a7;
+    ;
     font-size: 15px;
     text-align: start;
 }
-#h4pelis{
+
+#h4pelis {
     color: #ffffff;
     font-size: 20px;
     padding-left: 20px;
@@ -122,7 +124,7 @@ button{
     margin-left: 20px;
 }
 
-input{
+input {
     border: none;
     padding: 10px;
     color: #fff;
@@ -134,25 +136,25 @@ input{
 }
 
 
-#leermas{
+#leermas {
     color: #4384a7;
 }
 
-#div2{
+#div2 {
     width: 300px;
     display: flex;
     gap: 5px;
 }
 
 /* series */
-#h4series{
+#h4series {
     color: #ffffff;
     font-size: 20px;
     padding-left: 20px;
     margin-top: 20px;
 }
 
-#series{
+#series {
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
@@ -164,14 +166,37 @@ input{
 }
 
 
-#leermas2{
+#leermas2 {
     color: #4384a7;
 }
 
 /* busqueda */
-#resultados{
+#resultados {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
+/* Trailer */
+
+#buttonLook {
+    background-color: #4384a7;
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    border-radius: 10px;
+}
+
+#h4Look {
+    color: #fff;
+    font-size: 17px;
+    background-color: transparent;
+}
+
+/* trailer */
+#divGeneralTrailer{
+    display: none;
+    
+}
