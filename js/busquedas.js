@@ -1,7 +1,10 @@
 // Función para mostrar solo los elementos que coincidan con el término de búsqueda
 const filtrarPeliculas = (term) => {
     const section = document.getElementById('general');
-    const peliculas = section.getElementsByTagName('button');
+    const peliculas = section.getElementsByTagName('div');
+    console.log(peliculas);
+    const button = document.getElementById('button')
+    console.log(button);
     for (const pelicula of peliculas) {
 
         if (pelicula.querySelector('h4')) {
