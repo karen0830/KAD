@@ -10,7 +10,7 @@ const filtrarPeliculas = (term) => {
         if (pelicula.querySelector('h4')) {
             const titulo = pelicula.querySelector('h4').textContent.toLowerCase();
             if (titulo.includes(term.toLowerCase())) {
-                pelicula.style.display = 'block';
+                pelicula.style.display = 'flex';
             } else {
                 pelicula.style.display = 'none';
             }

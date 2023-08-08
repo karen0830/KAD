@@ -123,7 +123,7 @@ export function btnLookT() {
     let cardTrailer = document.getElementById('divGeneralTrailer');
     matriz.forEach(elemento => {
         elemento[8].addEventListener('click', () => {
-            cardTrailer.style = 'display: flex'
+            cardTrailer.style.display = 'block'
             let iframe = document.getElementById('iframeP')
             iframe.src = `https://www.youtube.com/embed/${elemento[9]}`
             // elemento[8].getElementById 
