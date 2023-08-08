@@ -88,6 +88,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_v
             array[2].src = 'https://image.tmdb.org/t/p/original' + element.backdrop_path
             array[3].textContent = element.original_title;
             array[4].textContent = element.overview
+            console.log(array[4].textContent);
             array[9] = trailer[i];
             console.log(array[9]);
             matriz.push(array)

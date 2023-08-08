@@ -71,7 +71,8 @@ nav .Navegar0 {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    text-align: left;
 }
 
 #description {
