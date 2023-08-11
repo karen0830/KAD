@@ -1,27 +1,27 @@
 import { buscarElemento } from "../js/busquedas.js";
 
 let trailer = [
-    'zh4KhVSMwtQ',
-    'av-9lvBdZ0k',
-    'NjBGzJ5FFmI',
-    'uNZu5dNck9Y',
-    'Gwk9EMcDsj4',
-    'uIvBFUYzeOc',
-    'OzAoGlARPFQ',
-    '7wuK5PhzcNY',
-    'mJqwSpxq2W4',
-    'sinstLBy9l8',
-    'FDhvbIqTQwI',
-    'JdMxXytjzoc',
-    'xdxFwUqKc-A',
-    'w65PKQBycNI',
-    'izQA8C3emt4',
-    'jxkGUWRJV24',
-    'awpDl9eB6Tg',
-    'lizOlZ-r3II',
-    'oBmazlyP220',
-    'gMPEbJQun68'
+    'oBmazlyP220',//Spider-Man
+    'NjBGzJ5FFmI', //TRANSFORMERS
+    'zh4KhVSMwtQ', //BARBIE
+    '7wuK5PhzcNY',//MEGALODON
+    'av-9lvBdZ0k', //THE FLASH
+    'uNZu5dNck9Y',// INSIDIOUS
+    'jxkGUWRJV24',//The Venture Bros: Radiant Is The Blood Of The Baboon Heart
+    'Gwk9EMcDsj4',//HIDDENS STRIKE
+    'uIvBFUYzeOc',//LA SIRENITA
+    'mJqwSpxq2W4', //Resident Evil Death Island
+    'FDhvbIqTQwI',//FAST & FURIOUS X
+    'sinstLBy9l8', //Guardianes de la Galaxia
+    'OzAoGlARPFQ',//MIRACULOUS
+    'xdxFwUqKc-A',//Shin Kamen Rider Opening
+    'w65PKQBycNI',//MAN OF STEEL 2
+    'lizOlZ-r3II',//映画『キングダム 運命の炎』予告
+    'JdMxXytjzoc',//Ruby: Aventuras De Una Kraken Adolescente
+    'izQA8C3emt4',//МАВКА. ЛІСОВА ПІСНЯ
+    'awpDl9eB6Tg',//WARHORSE ONE
 ]
+
 // JavaScript
 const section = document.getElementById('peliculas');
 const crear = () => {
@@ -120,15 +120,47 @@ function leerMasyMenos() {
 
 // button look
 export function btnLookT() {
-    let cardTrailer = document.getElementById('divGeneralTrailer');
     matriz.forEach(elemento => {
         elemento[8].addEventListener('click', () => {
-            cardTrailer.style.display = 'block'
-            let iframe = document.getElementById('iframeP')
-            iframe.src = `https://www.youtube.com/embed/${elemento[9]}`
-            // elemento[8].getElementById 
-        })
-    })
+            openModal(elemento[9]);
+        });
+    });
+}
+
+function openModal(videoId) {
+    const modal = createModal(videoId);
+    document.body.appendChild(modal);
+}
+
+function createModal(videoId) {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.addEventListener('click', closeModal);
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    iframe.setAttribute('allowfullscreen', true);
+    iframe.setAttribute('frameborder', 0);
+
+    modalContent.appendChild(closeButton);
+    modalContent.appendChild(iframe);
+    modal.appendChild(modalContent);
+
+    return modal;
+}
+
+function closeModal() {
+    const modal = document.querySelector('.modal');
+    if (modal) {
+        modal.remove();
+    }
 }
 
 // trailer
@@ -165,5 +197,5 @@ const cardTrailer = () => {
     return divGeneral;
 }
 // Trailer
-
 cardTrailer();
+

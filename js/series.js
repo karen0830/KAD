@@ -6,26 +6,26 @@ const baseURL = 'https://image.tmdb.org/t/p/w500'; // Base URL de las imágenes 
 
 
 let arraySeries = [
-    'QIdFe_UF6EM',
-    'XL2uitZ0TvY',
-    '4i5BAEyhpEg',
-    'aPBUUJbrAWo',
-    '3Mz_aAbtm6E',
-    'HLyXCOgXJns',
-    'QoCZB5304P0',
-    'FnYQWX5Bo_k',
-    '1dqOSD2iDdI',
-    'DiJ71etOG8M',
-    'CKUf6eeNieM',
-    '2sJTSw2qWnQ',
-    'q8HTURegJnc',
-    'U8W4VSBo4JU',
-    'SGPmATwOMzs',
-    'AZ5LA42rbHo',
-    'JhNIEExNAYE',
-    '_2un1aU7mT0',
-    'KcBStos46EM',
-    'hatjI-dygQE'
+    'QoCZB5304P0', //El abogado del Lincoln
+    'hatjI-dygQE', //The First Responders
+    '3Mz_aAbtm6E', //ZOOM 100
+    '_2un1aU7mT0', //Nobody | The Bus Fight
+    'U8W4VSBo4JU', //TWISTED METAL
+    'JhNIEExNAYE', //Seducción Fatal
+    'KcBStos46EM', //Loki 
+    'SGPmATwOMzs', //Star Trek: Strange New Worlds
+    'HLyXCOgXJns', //ONE PIECE 
+    'CKUf6eeNieM', //YHWACH : Hijo mío, NACIDO EN LA OSCURIDAD
+    '4i5BAEyhpEg', //HIJACK
+    'aPBUUJbrAWo', //nn
+    'AZ5LA42rbHo', //Futurama
+    '2sJTSw2qWnQ', //Operativo: Lioness
+    'DiJ71etOG8M', //Invasión Secreta
+    'FnYQWX5Bo_k', //The Witcher
+    '1dqOSD2iDdI', //Fundación
+    'XL2uitZ0TvY', //Heartstopper
+    'QIdFe_UF6EM', //Las Flores Perdidas de Alice Hart
+    'q8HTURegJnc', //Good Omens
   ]
 
 const crearSeries = (serieData) => {
@@ -129,14 +129,83 @@ function leerMasyMenos2() {
         })
 }
 
+// button look
 export function btnLookT() {
-    let cardTrailer = document.getElementById('divGeneralTrailer');
     matriz2.forEach(elemento => {
         elemento[8].addEventListener('click', () => {
-            cardTrailer.style = 'display: flex'
-            let iframe = document.getElementById('iframeP')
-            iframe.src = `https://www.youtube.com/embed/${elemento[9]}`
-            // elemento[8].getElementById 
-        })
-    })
+            openModal(elemento[9]);
+        });
+    });
 }
+
+function openModal(videoId) {
+    const modal = createModal(videoId);
+    document.body.appendChild(modal);
+}
+
+function createModal(videoId) {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
+
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close-button');
+    closeButton.innerHTML = '&times;';
+    closeButton.addEventListener('click', closeModal);
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    iframe.setAttribute('allowfullscreen', true);
+    iframe.setAttribute('frameborder', 0);
+
+    modalContent.appendChild(closeButton);
+    modalContent.appendChild(iframe);
+    modal.appendChild(modalContent);
+
+    return modal;
+}
+
+function closeModal() {
+    const modal = document.querySelector('.modal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+// trailer
+const cardTrailer = () => {
+    const divGeneral = document.createElement('div');
+    divGeneral.id = 'divGeneralTrailer';
+
+    const div = document.createElement('div');
+    div.id = 'divDescriptionTrailerPeli';
+
+    const button = document.createElement('button')
+    button.id = 'buttonTrailer'
+    button.textContent = "X"
+
+    const iframe = document.createElement('iframe');
+    iframe.id = "iframeP";
+    iframe.src = `https://www.youtube.com/embed/iFl1cFggFb8`
+
+    const div2 = document.createElement('div');
+    div2.id = 'divTrailer';
+
+    const descripcion = document.createElement('p');
+    descripcion.id = 'description';
+
+    div.appendChild(button)
+    div.appendChild(iframe)
+
+    div2.appendChild(descripcion);
+
+    divGeneral.appendChild(div)
+    divGeneral.appendChild(div2);
+    const main = document.querySelector('main')
+    main.appendChild(divGeneral);
+    return divGeneral;
+}
+// Trailer
+cardTrailer();
